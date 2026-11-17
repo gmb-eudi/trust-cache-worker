@@ -2,6 +2,18 @@
 
 Notable changes, newest first. Releases are git tags; this file says what each tag contains.
 
+## Unreleased
+
+### Changed
+
+- **Go 1.27.4** (was 1.27.2), both in `go.mod` and as the image's default build toolchain
+  (`ARG GO_VERSION` in the `Dockerfile`), and the framework moves to **azugo v0.50.2**, with
+  `go-platform-kit` → v1.13.0, `go-authbyte` → v0.46.0, `go-eudi-trust` → v0.1.4,
+  `go-verifier-helpers` → v0.0.6 and `go-eudi-crypto` → v0.0.10. **Rebuild the image to pick this
+  up.**
+- Request bodies the framework reads are held to 4 MiB (`413` over it). This service's routes take
+  no request body, so nothing changes for them.
+
 ## v0.1.1
 
 A security release. **The service now builds with Go 1.27.2**, and its libraries move to their Go 1.27.2
